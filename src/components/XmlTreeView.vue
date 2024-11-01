@@ -21,7 +21,7 @@ export default {
       try {
         const BASE_URL = "https://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
 
-        const response = await axios.get("${BASE_URL}/api/products/xml", {
+        const response = await axios.get(`${BASE_URL}/api/products/xml`, {
           headers: { "Accept": "application/xml" }
         });
         this.xmlTree = response.data;

@@ -55,7 +55,7 @@ export default {
     async fetchProducts() {
       try {
         const BASE_URL = "https://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
-        const response = await axios.get("${BASE_URL}/api/products");
+        const response = await axios.get(`${BASE_URL}/api/products`);
         this.products = response.data;
         this.filteredProducts = this.products; // Establecer los productos filtrados
         this.getCategories(); // Obtener categorías después de cargar los productos
@@ -66,7 +66,7 @@ export default {
     async fetchSummary() {
       try {
         const BASE_URL = "https://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
-        const response = await axios.get("${BASE_URL}/api/products/summary");
+        const response = await axios.get(`${BASE_URL}/api/products/summary`);
         this.summary = response.data;
       } catch (error) {
         console.error("Error fetching summary:", error);

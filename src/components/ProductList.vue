@@ -93,7 +93,7 @@ export default {
       try {
         const BASE_URL = "https://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
 
-        const response = await axios.get('${BASE_URL}/api/products');
+        const response = await axios.get(`${BASE_URL}/api/products`);
         this.products = response.data;
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -108,7 +108,7 @@ export default {
       try {
         const BASE_URL = "https://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
 
-        await axios.post('${BASE_URL}/api/products', this.newProduct);
+        await axios.post(`${BASE_URL}/api/products`, this.newProduct);
         this.fetchProducts(); // Recargar lista de productos
         this.newProduct = { name: '', price: 0.00, category: '' }; // Limpiar el formulario
         this.showForm = false; // Ocultar el formulario después de crear

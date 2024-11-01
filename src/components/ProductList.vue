@@ -65,7 +65,6 @@
 import axios from 'axios';
 
 // Cambia esto a la URL de tu ngrok activa
-const BASE_URL = "https://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
 
 export default {
   data() {
@@ -92,6 +91,8 @@ export default {
   methods: {
     async fetchProducts() {
       try {
+        const BASE_URL = "https://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
+
         const response = await axios.get('${BASE_URL}/api/products');
         this.products = response.data;
       } catch (error) {
@@ -105,6 +106,8 @@ export default {
     },
     async createProduct() {
       try {
+        const BASE_URL = "https://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
+
         await axios.post('${BASE_URL}/api/products', this.newProduct);
         this.fetchProducts(); // Recargar lista de productos
         this.newProduct = { name: '', price: 0.00, category: '' }; // Limpiar el formulario
@@ -115,6 +118,8 @@ export default {
     },
     async updateProduct() {
       try {
+        const BASE_URL = "https://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
+
         await axios.put(`${BASE_URL}/api/products/${this.selectedProduct.id}`, this.selectedProduct);
         this.fetchProducts(); // Recargar lista de productos
         this.selectedProduct = null;
@@ -125,6 +130,8 @@ export default {
     },
     async deleteProduct(productId) {
       try {
+        const BASE_URL = "https://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
+
         await axios.delete(`${BASE_URL}/api/products/${productId}`);
         this.fetchProducts(); // Recargar lista de productos
       } catch (error) {

@@ -89,7 +89,7 @@ export default {
   methods: {
     async fetchProducts() {
       try {
-        const response = await axios.get('http://71dc-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app/api/products');
+        const response = await axios.get('http://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app/api/products');
         this.products = response.data;
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -102,7 +102,7 @@ export default {
     },
     async createProduct() {
       try {
-        await axios.post('http://71dc-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app/api/products', this.newProduct);
+        await axios.post('http://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app/api/products', this.newProduct);
         this.fetchProducts(); // Recargar lista de productos
         this.newProduct = { name: '', price: 0.00, category: '' }; // Limpiar el formulario
         this.showForm = false; // Ocultar el formulario después de crear
@@ -112,7 +112,7 @@ export default {
     },
     async updateProduct() {
       try {
-        await axios.put(`http://71dc-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app/api/products/${this.selectedProduct.id}`, this.selectedProduct);
+        await axios.put(`http://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app/api/products/${this.selectedProduct.id}`, this.selectedProduct);
         this.fetchProducts(); // Recargar lista de productos
         this.selectedProduct = null;
         this.showForm = false; // Ocultar el formulario después de editar
@@ -122,7 +122,7 @@ export default {
     },
     async deleteProduct(productId) {
       try {
-        await axios.delete(`http://71dc-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app/api/products/${productId}`);
+        await axios.delete(`http://d992-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app/api/products/${productId}`);
         this.fetchProducts(); // Recargar lista de productos
       } catch (error) {
         console.error("Error deleting product:", error);

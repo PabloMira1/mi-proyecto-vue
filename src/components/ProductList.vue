@@ -64,7 +64,9 @@
 <script>
 import axios from 'axios';
 
-// Cambia esto a la URL de tu ngrok activa
+// Cambia esto a la URL
+const BASE_URL = "http://192.168.1.53:8081";
+
 
 export default {
   data() {
@@ -91,8 +93,6 @@ export default {
   methods: {
     async fetchProducts() {
       try {
-        const BASE_URL = " https://eb5b-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
-
         const response = await axios.get(`${BASE_URL}/api/products`);
         this.products = response.data;
       } catch (error) {
@@ -106,8 +106,6 @@ export default {
     },
     async createProduct() {
       try {
-        const BASE_URL = " https://eb5b-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
-
         await axios.post(`${BASE_URL}/api/products`, this.newProduct);
         this.fetchProducts(); // Recargar lista de productos
         this.newProduct = { name: '', price: 0.00, category: '' }; // Limpiar el formulario
@@ -118,8 +116,6 @@ export default {
     },
     async updateProduct() {
       try {
-        const BASE_URL = " https://eb5b-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
-
         await axios.put(`${BASE_URL}/api/products/${this.selectedProduct.id}`, this.selectedProduct);
         this.fetchProducts(); // Recargar lista de productos
         this.selectedProduct = null;
@@ -130,8 +126,6 @@ export default {
     },
     async deleteProduct(productId) {
       try {
-        const BASE_URL = " https://eb5b-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
-
         await axios.delete(`${BASE_URL}/api/products/${productId}`);
         this.fetchProducts(); // Recargar lista de productos
       } catch (error) {

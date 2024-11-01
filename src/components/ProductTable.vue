@@ -39,6 +39,7 @@
 import axios from 'axios';
 
 // Cambia esto a la URL de tu ngrok activa
+const BASE_URL = "http://192.168.1.53:8081";
 
 
 export default {
@@ -54,7 +55,6 @@ export default {
   methods: {
     async fetchProducts() {
       try {
-        const BASE_URL = " https://eb5b-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
         const response = await axios.get(`${BASE_URL}/api/products`);
         this.products = response.data;
         this.filteredProducts = this.products; // Establecer los productos filtrados
@@ -65,7 +65,6 @@ export default {
     },
     async fetchSummary() {
       try {
-        const BASE_URL = " https://eb5b-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app";
         const response = await axios.get(`${BASE_URL}/api/products/summary`);
         this.summary = response.data;
       } catch (error) {

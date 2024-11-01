@@ -51,7 +51,7 @@ export default {
   methods: {
     async fetchProducts() {
       try {
-        const response = await axios.get("http://localhost:8081/api/products");
+        const response = await axios.get("http://71dc-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app/api/products");
         this.products = response.data;
         this.filteredProducts = this.products; // Establecer los productos filtrados
         this.getCategories(); // Obtener categorías después de cargar los productos
@@ -61,7 +61,7 @@ export default {
     },
     async fetchSummary() {
       try {
-        const response = await axios.get("http://localhost:8081/api/products/summary");
+        const response = await axios.get("71dc-2800-e2-280-1048-344f-5449-4334-3102.ngrok-free.app/api/products/summary");
         this.summary = response.data;
       } catch (error) {
         console.error("Error fetching summary:", error);

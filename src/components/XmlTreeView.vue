@@ -9,7 +9,7 @@
 import axios from 'axios';
 
 // Cambia esto a la URL 
-const BASE_URL = "https://intuitive-joy-production-c7ae.up.railway.app";
+const BASE_URL = "https://intuitive-joy-production-3625.up.railway.app";
 
 
 export default {

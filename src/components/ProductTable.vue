@@ -39,7 +39,7 @@
 import axios from 'axios';
 
 // Cambia esto a la URL de tu ngrok activa
-const BASE_URL = "http://192.168.1.53:8081";
+const BASE_URL = "https://intuitive-joy-production-c7ae.up.railway.app";
 
 
 export default {
